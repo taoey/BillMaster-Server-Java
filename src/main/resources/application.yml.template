@@ -27,3 +27,6 @@ spring:
 ## 把数据持久层 mapper文件位置
 mybatis:
   mapperLocations: classpath:mapper/**/*.xml
+  type-aliases-package: com.tao.pojo.sys
+  configuration:
+    map-underscore-to-camel-case: true
