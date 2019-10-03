@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tao.data.me.TagMapperMe">
+    <!--
+        自增ID设置： useGeneratedKeys="true" keyProperty="id"
+    -->
+    <select id="list" resultType="map" parameterType="map">
+        select * from tag
+        <where>
+            status = 1
+            <if test="name !=null">
+              and `name` like concat(CONCAT('%',#{name}),'%')
+            </if>
+            <if test="pid !=null">
+                and `pid` = #{pid}
+            </if>
+        </where>
+    </select>
+</mapper>
