@@ -30,3 +30,11 @@ mybatis:
   type-aliases-package: com.tao.pojo.sys
   configuration:
     map-underscore-to-camel-case: true
+
+# 配置日志级别，mapper接口中输出SQL执行日志
+logging:
+  level:
+    com:
+      tao:
+        data:
+          me: debug
